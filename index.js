@@ -56,7 +56,7 @@ async function downloadSessionData() {
         return false;
     }
 
-    const sessdata = config.SESSION_ID.split("MALVIN-XD~")[1];
+    const sessdata = config.SESSION_ID.split("KING-GANESHA-MD~")[1]; // Updated to KING-GANESHA-MD
 
     if (!sessdata || !sessdata.includes("#")) {
         console.error('❌ Invalid SESSION_ID format! It must contain both file ID and decryption key.');
@@ -89,37 +89,37 @@ async function start() {
     try {
         const { state, saveCreds } = await useMultiFileAuthState(sessionDir);
         const { version, isLatest } = await fetchLatestBaileysVersion();
-        console.log(`🤖 JINWOO-MD using WA v${version.join('.')}, isLatest: ${isLatest}`);
-        
+        console.log(`🤖 KING-GANESHA-MD using WA v${version.join('.')}, isLatest: ${isLatest}`); // Updated bot name
+
         const Matrix = makeWASocket({
             version,
             logger: pino({ level: 'silent' }),
             printQRInTerminal: useQR,
-            browser: ["KING GANESHA-MD", "safari", "3.3"],
+            browser: ["KING-GANESHA-MD", "safari", "3.3"], // Updated bot name
             auth: state,
             getMessage: async (key) => {
                 if (store) {
                     const msg = await store.loadMessage(key.remoteJid, key.id);
                     return msg.message || undefined;
                 }
-                return { conversation: "JINWOO-MD whatsapp user bot" };
+                return { conversation: "KING-GANESHA-MD whatsapp user bot" }; // Updated bot name
             }
         });
 
-Matrix.ev.on('connection.update', (update) => {
-    const { connection, lastDisconnect } = update;
-    if (connection === 'close') {
-        if (lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut) {
-            start();
-        }
-    } else if (connection === 'open') {
-        if (initialConnection) {
-            console.log(chalk.green("Connected Successfully JINWOO-MD 👤"));
-            Matrix.sendMessage(Matrix.user.id, { 
-                image: { url: "https://i.ibb.co/TqrthF8S/temp-image.jpg" }, 
-                caption: `*Hᴇʟʟᴏ ᴛʜᴇʀᴇ ᴊɪɴᴡᴏᴏ ᴠ³ Usᴇʀ! 👋🏻* 
+        Matrix.ev.on('connection.update', (update) => {
+            const { connection, lastDisconnect } = update;
+            if (connection === 'close') {
+                if (lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut) {
+                    start();
+                }
+            } else if (connection === 'open') {
+                if (initialConnection) {
+                    console.log(chalk.green("Connected Successfully KING-GANESHA-MD 👤")); // Updated bot name
+                    Matrix.sendMessage(Matrix.user.id, { 
+                        image: { url: "https://i.ibb.co/TqrthF8S/temp-image.jpg" }, 
+                        caption: `*Hᴇʟʟᴏ ᴛʜᴇʀᴇ KING-GANESHA-MD Usᴇʀ! 👋🏻* 
 
-*ᴋᴇᴇᴘ ᴏɴ ᴜsɪɴɢ ᴊɪɴᴡᴏᴏ ᴍᴏᴅs🚩* 
+*ᴋᴇᴇᴘ ᴏɴ ᴜsɪɴɢ KING-GANESHA-MD 🚩* 
 
 > Join WhatsApp Channel: ⤵️  
 https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
@@ -127,18 +127,18 @@ https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
 - *ʏᴏᴜʀ ʙᴏᴛ ᴘʀᴇғɪx: ➡️[ ${prefix} ] *
 
 Don't forget to give a star to the repo ⬇️ 
- 
-↪️https://github.com/kingmalvn/Jinwoo-v3
 
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ  🌀KING GANESHA-MD 🌀`
-            });
-            initialConnection = false;
-        } else {
-            console.log(chalk.blue("♻️ Connection reestablished after restart."));
-        }
-    }
-});
-        
+↪️https://github.com/your-username/KING-GANESHA-MD
+
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ  🌀KING-GANESHA-MD 🌀`
+                    });
+                    initialConnection = false;
+                } else {
+                    console.log(chalk.blue("♻️ Connection reestablished after restart."));
+                }
+            }
+        });
+
         Matrix.ev.on('creds.update', saveCreds);
 
         Matrix.ev.on("messages.upsert", async chatUpdate => await Handler(chatUpdate, Matrix, logger));
@@ -166,26 +166,26 @@ Don't forget to give a star to the repo ⬇️
                 console.error('Error during auto reaction:', err);
             }
         });
-        
+
         Matrix.ev.on('messages.upsert', async (chatUpdate) => {
-    try {
-        const mek = chatUpdate.messages[0];
-        const fromJid = mek.key.participant || mek.key.remoteJid;
-        if (!mek || !mek.message) return;
-        if (mek.key.fromMe) return;
-        if (mek.message?.protocolMessage || mek.message?.ephemeralMessage || mek.message?.reactionMessage) return; 
-        if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN) {
-            await Matrix.readMessages([mek.key]);
-            
-            if (config.AUTO_STATUS_REPLY) {
-                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By KING GANESHA-MD';
-                await Matrix.sendMessage(fromJid, { text: customMessage }, { quoted: mek });
+            try {
+                const mek = chatUpdate.messages[0];
+                const fromJid = mek.key.participant || mek.key.remoteJid;
+                if (!mek || !mek.message) return;
+                if (mek.key.fromMe) return;
+                if (mek.message?.protocolMessage || mek.message?.ephemeralMessage || mek.message?.reactionMessage) return; 
+                if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_SEEN) {
+                    await Matrix.readMessages([mek.key]);
+
+                    if (config.AUTO_STATUS_REPLY) {
+                        const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By KING-GANESHA-MD';
+                        await Matrix.sendMessage(fromJid, { text: customMessage }, { quoted: mek });
+                    }
+                }
+            } catch (err) {
+                console.error('Error handling messages.upsert event:', err);
             }
-        }
-    } catch (err) {
-        console.error('Error handling messages.upsert event:', err);
-    }
-});
+        });
 
     } catch (error) {
         console.error('Critical Error:', error);
@@ -213,9 +213,9 @@ async function init() {
 init();
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('KING-GANESHA-MD is Running! 🚀'); // Updated response
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`KING-GANESHA-MD Server is running on port ${PORT}`); // Updated log
 });
