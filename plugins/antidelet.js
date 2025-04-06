@@ -80,4 +80,4 @@ const AntiDeleteCommand = async (m, Matrix) => {
 
 export default AntiDeleteCommand;
 
-//let ᴍᴀʟᴠɪɴ ᴋɪɴɢ be your teacher
+//let KING GANESHA
