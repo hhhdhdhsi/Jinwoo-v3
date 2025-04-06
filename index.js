@@ -89,7 +89,7 @@ async function start() {
     try {
         const { state, saveCreds } = await useMultiFileAuthState(sessionDir);
         const { version, isLatest } = await fetchLatestBaileysVersion();
-        console.log(`🤖 KING-GANESHA-MD using WA v${version.join('.')}, isLatest: ${isLatest}`); // Updated bot name
+        console.log(`✔ KING-GANESHA-MD using WA v${version.join('.')}, isLatest: ${isLatest}`); // Updated bot name
 
         const Matrix = makeWASocket({
             version,
