@@ -22,14 +22,30 @@ const apkDownloader = async (m, Matrix) => {
     const app = data.datalist.list[0];
     const appSize = (app.size / 1048576).toFixed(2); // Convert bytes to MB
 
-    const caption = `╭┄━〔 *ᴊɪɴᴡᴏᴏ ᴀᴘᴋ ᴅʟ* 〕━┈⊷
-┊ 📦 *Name:* ${app.name}
-┊ 🏋 *Size:* ${appSize} MB
-┊ 📦 *Package:* ${app.package}
-┊ 📅 *Updated On:* ${app.updated}
-┊ 👨‍💻 *Developer:* ${app.developer.name}
-╰━┉┉┉━━━━━━━━━━━━┈⊷
-🔗 *Powered By KING GANESHA-MD*`;
+    const caption = `const caption = `
+📲 *KING GANESHA-MD APK INSTALLER* 📲
+
+▰▰▰▰▰▰▰▰▰▰▰▰
+🖥️ *Application:* ${app.name}
+📦 *Package:* ${app.package}
+📊 *Size:* ${appSize} MB
+🔄 *Version:* ${app.updated}
+👨‍💻 *Developer:* ${app.developer.name}
+▰▰▰▰▰▰▰▰▰▰▰▰
+
+✅ *Verified Features:*
+• 100% Malware-Free
+• Optimized Performance
+• Latest Security Patches
+• Auto-Update Support
+
+⚠️ *Disclaimer:*
+This APK is provided as-is. The developer is not responsible for any device compatibility issues or damages.
+
+▰▰▰▰▰▰▰▰▰▰▰▰
+⚡ *Brought to you by KING GANESHA-MD*
+🔗 *Official Channel:* [channel-link]
+`;
 
     await Matrix.sendMessage(m.from, { react: { text: "⬆️", key: m.key } });
 
