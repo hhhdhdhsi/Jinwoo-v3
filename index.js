@@ -95,7 +95,7 @@ async function start() {
             version,
             logger: pino({ level: 'silent' }),
             printQRInTerminal: useQR,
-            browser: ["JINWOO-MD", "safari", "3.3"],
+            browser: ["KING GANESHA-MD", "safari", "3.3"],
             auth: state,
             getMessage: async (key) => {
                 if (store) {
@@ -130,7 +130,7 @@ Don't forget to give a star to the repo ⬇️
  
 ↪️https://github.com/kingmalvn/Jinwoo-v3
 
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ  🌀 ᴍᴀʟᴠɪɴ ᴋɪɴɢ ᴛᴇᴄʜ 🌀`
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ  🌀KING GANESHA-MD 🌀`
             });
             initialConnection = false;
         } else {
@@ -178,7 +178,7 @@ Don't forget to give a star to the repo ⬇️
             await Matrix.readMessages([mek.key]);
             
             if (config.AUTO_STATUS_REPLY) {
-                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By JINWOO-MD';
+                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By KING GANESHA-MD';
                 await Matrix.sendMessage(fromJid, { text: customMessage }, { quoted: mek });
             }
         }
