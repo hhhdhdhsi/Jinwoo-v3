@@ -1,16 +1,16 @@
 {
-  "name": "Jinwoo-v3",
+  "name": "KING GANESHA-MD",
   "version": "10.8.1",
-  "description": "Jinwoo v3 latest multi device whatsapp bot",
+  "description": "KING GANESHA-MD SIMPLE multi device whatsapp bot",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name jinwoo",
-    "stop": "pm2 stop jinwoo",
-    "restart": "pm2 restart jinwoo"
+    "start": "pm2 start index.js --deep-monitoring --attach --name KING GANESHA-MD",
+    "stop": "pm2 stop KING GANESHA-MD",
+    "restart": "pm2 restart KING GANESHA-MD"
   },
-  "keywords": ["jinwoo-bot", "whatsapp-bot", "whatsapp md bot"],
-  "author": "Malvin",
+  "keywords": ["KING GANESHA-MD", "whatsapp-bot", "whatsapp md bot"],
+  "author": "chanu",
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
