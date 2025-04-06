@@ -10,7 +10,7 @@ const apkDownloader = async (m, Matrix) => {
   if (!query) return Matrix.sendMessage(m.from, { text: "❌ *Usage:* `.apk <App Name>`" }, { quoted: m });
 
   try {
-    await Matrix.sendMessage(m.from, { react: { text: "⏳", key: m.key } });
+    await Matrix.sendMessage(m.from, { react: { text: "⬆️", key: m.key } });
 
     const apiUrl = `http://ws75.aptoide.com/api/7/apps/search/query=${encodeURIComponent(query)}/limit=1`;
     const { data } = await axios.get(apiUrl);
@@ -29,7 +29,7 @@ const apkDownloader = async (m, Matrix) => {
 ┊ 📅 *Updated On:* ${app.updated}
 ┊ 👨‍💻 *Developer:* ${app.developer.name}
 ╰━┉┉┉━━━━━━━━━━━━┈⊷
-🔗 *Powered By Jinwoo bot🤖*`;
+🔗 *Powered By KING GANESHA-MD*`;
 
     await Matrix.sendMessage(m.from, { react: { text: "⬆️", key: m.key } });
 
