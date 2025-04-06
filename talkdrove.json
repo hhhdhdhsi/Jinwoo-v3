@@ -1,6 +1,6 @@
 {
-    "bot-name": "Jinwoo-v3",
-    "description": "JINWOO made for people on Earth By Malvin King",
+    "bot-name": "KING GANESHA-MD",
+    "description": "KING GANESHA-MD made for people on Earth By GANESHA MD",
     "logo": "https://files.catbox.moe/gld2vo.jpg",
     "keywords": ["bot"],
     "documentation-link": "https://malvin-pair-code-xzcb.onrender.com",
@@ -16,7 +16,7 @@
       "BOT_NAME": {
         "description": "write here your bot name.",
         "required": true,
-        "value": "✦『ᴊɪɴᴡᴏᴏ-ᴠ3』✦"    
+        "value": "KING GANESHA-MD","    
     },
       "PREFIX": {
         "description": "Bot command prefix, (e.g, . , ! @ etc",
@@ -47,7 +47,7 @@
     "STATUS_READ_MSG": {
       "description": "set your status reply message",
       "required": false,
-      "value": "*Status Seen By ᴊɪɴᴡᴏᴏ ʙᴏᴛ ᴠ3 👻🤍*"
+      "value": "*Status Seen By KING GANESHA-MD 👻🤍*"
     },
     "OWNER_NAME": {
       "description": "set your status reply message",
@@ -57,7 +57,7 @@
     "OWNER_NUMBER": {
       "description": "set your status reply message",
       "required": false,
-      "value": "263714757857"
+      "value": "94741252876"
     },
     "AUTO_READ": {
       "description": "make it true if you want bot to read message",
